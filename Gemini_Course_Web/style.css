@@ -19,7 +19,6 @@
 body {
     font-family: 'Inter', 'Noto Sans TC', sans-serif;
     background-color: var(--bg-color);
-    /* Fallback */
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
@@ -32,7 +31,6 @@ body {
     left: 0;
     width: 100vw;
     height: 120vh;
-    /* Taller for movement */
     background-position: center;
     background-repeat: repeat;
     z-index: -10;
@@ -52,7 +50,6 @@ body {
     opacity: 0.4;
     z-index: -9;
     mix-blend-mode: screen;
-    /* Blend black background */
 }
 
 .bg-overlay {
@@ -90,6 +87,18 @@ body {
 
     100% {
         transform: translateY(0px);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -138,11 +147,9 @@ body {
     text-align: center;
     overflow: hidden;
     background-color: var(--bg-color);
-    /* Hide parallax layers */
     z-index: 1;
 }
 
-/* Remove static hero BG if using global parallax, or blend it */
 .hero-bg {
     position: absolute;
     top: 0;
@@ -150,11 +157,9 @@ body {
     width: 100%;
     height: 100%;
     background-image: url('assets/hero.png');
-    /* Keep hero specific image */
     background-size: cover;
     background-position: center;
     opacity: 1;
-    /* Full opacity */
     z-index: 0;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
@@ -220,7 +225,6 @@ h1 {
     padding: 6rem 2rem;
     position: relative;
     z-index: 1;
-    /* Above background */
 }
 
 .container {
@@ -239,6 +243,27 @@ h1 {
     color: var(--text-secondary);
     margin-bottom: 4rem;
     font-size: 1.1rem;
+}
+
+/* Interactive Cards */
+.interactive-card {
+    cursor: pointer;
+    position: relative;
+}
+
+.interactive-card::after {
+    content: "👆 點擊查看詳情";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.interactive-card:hover::after {
+    opacity: 1;
 }
 
 /* Ecosystem Grid */
@@ -341,6 +366,13 @@ h1 {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 12px;
+    transition: background 0.3s;
+}
+
+.feature-item:hover {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .feature-icon {
@@ -357,7 +389,6 @@ h1 {
 
 .dark-bg {
     background: rgba(0, 0, 0, 0.2);
-    /* Subtle dim for contrast */
 }
 
 /* Creative Grid */
@@ -377,12 +408,13 @@ h1 {
     justify-content: flex-end;
     position: relative;
     overflow: hidden;
-    cursor: default;
+    cursor: pointer;
     transition: 0.3s;
 }
 
 .tool-card:hover {
     filter: brightness(1.1);
+    transform: translateY(-5px);
 }
 
 .big-card {
@@ -484,6 +516,85 @@ footer {
     margin-top: 4rem;
     position: relative;
     z-index: 2;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 600px;
+    background: #1e2126;
+    border: 1px solid var(--primary-color);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    z-index: 2001;
+    animation: scaleIn 0.3s ease-out;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.modal-header h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+#modal-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--secondary-color);
+}
+
+.modal-body {
+    color: var(--text-secondary);
+    line-height: 1.8;
 }
 
 /* Responsive */

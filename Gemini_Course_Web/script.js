@@ -90,3 +90,92 @@ document.querySelectorAll('.card, .section-title, .feature-item').forEach(el => 
     el.style.transition = "all 0.6s ease-out";
     observer.observe(el);
 });
+
+// --- Modal Logic ---
+
+const contentData = {
+    "pro": {
+        title: "Gemini 3 Pro",
+        desc: "Gemini 3 Pro 是 Google 目前最強大的模型版本 (Preview)，專為處理解決最複雜的任務而設計。包含深度數學推理、科學分析、以及大規模程式碼編寫能力。它能精準理解長篇文件與複雜指令，是專業人士的最佳助手。",
+        icon: "cpu"
+    },
+    "flash": {
+        title: "Gemini 3 Flash",
+        desc: "Gemini 3 Flash 結合了極致速度與高 CP 值，並引入了全新的「思考模式 (Thinking Mode)」。在許多標準測試中，其表現甚至超越了上一代的 Pro 模型，適合需要即時反應的應用場景，如即時翻譯、快速問答與摘要。",
+        icon: "zap"
+    },
+    "nano": {
+        title: "Gemini Nano",
+        desc: "專為手機與終端裝置打造的輕量化模型。它能在裝置端離線運行，處理敏感數據或需要零延遲的任務，如即時語音轉文字、智慧回覆建議，確保隱私與效能。",
+        icon: "smartphone"
+    },
+    "extensions": {
+        title: "Google 服務整合",
+        desc: "Gemini 的殺手級應用。它能直接讀取您的 Google 雲端硬碟、Gmail、Google Maps 資訊。您可以要求它「幫我總結關於專案 X 的所有郵件」或「規劃這週末的倫敦旅遊行程並標註在地圖上」。",
+        icon: "map"
+    },
+    "multimodal": {
+        title: "多模態分析",
+        desc: "Gemini 是原生多模態模型，意即它「天生」就看懂圖片、聽懂聲音、讀懂影片。上傳一段 1 小時的會議影片，它能在幾秒鐘內幫您生成帶有時間戳記的詳細會議記錄與重點摘要。",
+        icon: "file-video"
+    },
+    "notebook": {
+        title: "NotebookLM",
+        desc: "最強的個人知識庫 RAG 工具。您可以上傳多達 50 個 PDF、網站連結或筆記，NotebookLM 會成為該領域的專家。透過 Gemini 介面，您可以隨時調用這些私有知識來回答問題，甚至生成 Podcast 格式的導讀。",
+        icon: "book-open"
+    },
+    "image-gen": {
+        title: "Nano Banana Pro",
+        desc: "即 Gemini 3 Pro Image 模型。它是目前市面上對中文理解能力最強的圖像生成模型之一，且具備極強的文字渲染能力，能在圖片中精準拼寫出複雜的英文甚至中文字，適合製作海報與行銷素材。",
+        icon: "image"
+    },
+    "veo": {
+        title: "Veo 3.1",
+        desc: "Google DeepMind 的影片生成模型。支援「文生影」與「圖生影」，更能生成 1080p 高解析度影片。最獨特的是它具備影音同步功能，生成的影片會包含逼真的環境音效與配樂。",
+        icon: "video"
+    },
+    "research": {
+        title: "Deep Research",
+        desc: "自動化深度研究代理人。當您給出一個廣泛的主題（如「分析 2025 電動車市場趨勢」），它會自主進行數十次搜尋，閱讀數百個網頁與 PDF，最後彙整成一份長篇、結構完整且附帶來源引用的專業報告。",
+        icon: "search"
+    },
+    "canvas": {
+        title: "Canvas 畫布模式",
+        desc: "專為協作而生的介面。不同於傳統對話視窗，Canvas 提供一個獨立的編輯區塊，讓您與 AI 共同編輯文章或程式碼。適合撰寫長篇部落格、行銷文案，或是預覽網頁前端效果。",
+        icon: "layout"
+    }
+};
+
+const modal = document.getElementById('detail-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
+const modalIcon = document.getElementById('modal-icon');
+
+function openModal(key) {
+    const data = contentData[key];
+    if (!data) return;
+
+    modalTitle.textContent = data.title;
+    modalDesc.textContent = data.desc;
+
+    // Reset icon manually if needed, or rely on lucide to re-render if we change the class
+    // Here we'll just set the icon attribute and call createIcons again
+    modalIcon.setAttribute('data-lucide', data.icon);
+    lucide.createIcons();
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Attach click events
+document.querySelectorAll('.interactive-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const key = card.getAttribute('data-id');
+        openModal(key);
+    });
+});
