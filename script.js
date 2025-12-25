@@ -6,13 +6,13 @@ window.addEventListener('scroll', () => {
     const layerFg = document.querySelector('.layer-fg');
 
     if (layerBg) {
-        // Background moves very slowly
-        layerBg.style.transform = `translateY(${scrollY * 0.1}px)`;
+        // Background: Infinite scroll using background-position (Moves slower)
+        layerBg.style.backgroundPositionY = `${-scrollY * 0.1}px`;
     }
 
     if (layerFg) {
-        // Foreground moves slightly faster
-        layerFg.style.transform = `translateY(${scrollY * 0.25}px)`;
+        // Foreground: Infinite scroll (Moves faster)
+        layerFg.style.backgroundPositionY = `${-scrollY * 0.2}px`;
     }
 });
 
