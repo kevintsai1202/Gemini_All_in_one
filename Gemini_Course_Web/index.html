@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Gemini 全方位實戰攻略 | By 凱文大叔</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="logo">
+            <span class="logo-icon">✨</span>
+            Google Gemini 實戰攻略
+        </div>
+        <div class="nav-links">
+            <a href="#ecosystem">生態系</a>
+            <a href="#web-features">Web 功能</a>
+            <a href="#creative">創意工具</a>
+            <a href="#gems">Gems & Opal</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="badge">凱文大叔獨家課程</div>
+            <h1>掌握 AI 的未來：<br><span class="gradient-text">Google Gemini</span></h1>
+            <p class="subtitle">從入門到精通，解鎖原生多模態與無限創意潛能。</p>
+            <a href="#ecosystem" class="cta-button">開始學習 <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="hero-bg" style="background-image: url('assets/hero.png');"></div>
+    </header>
+
+    <!-- Section 1: The Ecosystem -->
+    <section id="ecosystem" class="section">
+        <div class="container">
+            <h2 class="section-title">第一章：Gemini 核心生態系</h2>
+            <p class="section-desc">Gemini 不僅是聊天機器人，更是 Google 最強大的原生多模態模型家族。</p>
+            
+            <div class="models-grid">
+                <!-- Pro Card -->
+                <div class="card model-card pro">
+                    <div class="card-header">
+                        <i data-lucide="cpu" class="icon-lg"></i>
+                        <h3>Gemini 3 Pro</h3>
+                        <span class="tag">旗艦大腦</span>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> 複雜邏輯推理與數學</li>
+                            <li><i data-lucide="check-circle"></i> 大規模程式設計</li>
+                            <li><i data-lucide="check-circle"></i> 深度多模態理解</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <span>適用：專業工作者</span>
+                    </div>
+                </div>
+
+                <!-- Flash Card -->
+                <div class="card model-card flash">
+                    <div class="card-header">
+                        <i data-lucide="zap" class="icon-lg"></i>
+                        <h3>Gemini 3 Flash</h3>
+                        <span class="tag">極速智囊</span>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> 反應極快，即問即答</li>
+                            <li><i data-lucide="check-circle"></i> 具備 Thinking Mode 思考能力</li>
+                            <li><i data-lucide="check-circle"></i> 高 CP 值，預設首選</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <span>適用：日常文書、快速查詢</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-block glass-panel">
+                <div class="info-icon"><i data-lucide="smartphone"></i></div>
+                <div class="info-text">
+                    <h4>Gemini Nano / Flash-Lite</h4>
+                    <p>極致輕量化模型，專為手機與終端裝置設計，實現零延遲的辨識與翻譯體驗。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Web Features -->
+    <section id="web-features" class="section dark-bg">
+        <div class="container split-layout">
+            <div class="text-content">
+                <h2 class="section-title">第二章：Web 強大整合</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i data-lucide="map" class="feature-icon"></i>
+                        <div>
+                            <h4>Google 服務深度整合</h4>
+                            <p>透過 @ 指令調用 Maps, Gmail, Docs。自動整理會議記錄到 Keep，或規劃旅遊行程。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="file-video" class="feature-icon"></i>
+                        <div>
+                            <h4>真・多模態檔案分析</h4>
+                            <p>直接上傳 MP4 影片或錄音檔，Gemini 能「看懂」並輸出逐字稿與摘要。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="book-open" class="feature-icon"></i>
+                        <div>
+                            <h4>NotebookLM 串接</h4>
+                            <p>打造個人化知識庫。匯入私人筆記，讓 Gemini 成為最懂你的專屬助理。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="assets/multimodal.png" alt="Multimodal visualization" class="floating-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Creative Tools -->
+    <section id="creative" class="section">
+        <div class="container">
+            <h2 class="section-title">第三章：創意生產力工具箱</h2>
+            
+            <div class="tools-grid">
+                <div class="tool-card big-card">
+                    <img src="assets/creative.png" alt="Creative Tools" class="card-bg-img">
+                    <div class="card-overlay">
+                        <h3>Nano Banana Pro (Gemini 3 Pro Image)</h3>
+                        <p>業界最強中文圖像生成。精準文字渲染，支援高解析度產出。</p>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="icon-box"><i data-lucide="video"></i></div>
+                    <h3>Veo 3.1 影片製作</h3>
+                    <p>Google DeepMind 最新力作。文生影、圖生影，且具備影音同步功能。</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="icon-box"><i data-lucide="search"></i></div>
+                    <h3>Deep Research</h3>
+                    <p>自動化深度研究。閱讀數百頁資料，產出附帶引用的專業報告。</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="icon-box"><i data-lucide="layout"></i></div>
+                    <h3>Canvas 畫布模式</h3>
+                    <p>協作專用介面。長文寫作、網頁原型預覽的最佳拍檔。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Gems & Opal -->
+    <section id="gems" class="section gradient-bg">
+        <div class="container text-center">
+            <h2 class="section-title">第四章：Gems 與 Opal (自定義 AI)</h2>
+            <p class="section-subtitle">人人都是工程師。透過 "Vibe Coding"，讓 AI 幫你寫 App。</p>
+
+            <div class="gems-showcase">
+                <div class="gem-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Gems (寶石)</h4>
+                        <p>預設提示詞的專屬助手 (如：Python 導師、故事產生器)</p>
+                    </div>
+                </div>
+                <div class="arrow"><i data-lucide="arrow-right"></i></div>
+                <div class="gem-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Opal (Vibe Coding)</h4>
+                        <p>自然語言描述需求 -> 自動生成可互動 Web App</p>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+            <button class="interactive-btn" onclick="startQuiz()">
+                🧠 隨堂小測驗：測試你的 Gemini 知識
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Google Gemini 實戰攻略 | 講師：凱文大叔</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
