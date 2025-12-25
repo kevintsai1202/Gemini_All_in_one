@@ -160,16 +160,26 @@ body {
 }
 
 .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
     background-image: url('assets/hero.png');
     background-size: cover;
     background-position: center;
     opacity: 1;
     z-index: 0;
+    animation: kenBurns 20s ease-out infinite alternate;
+}
+
+@keyframes kenBurns {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
 }
 
 .hero-content {
