@@ -1,3 +1,21 @@
+// Parallax Effect
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    const layerBg = document.querySelector('.layer-bg');
+    const layerFg = document.querySelector('.layer-fg');
+
+    if (layerBg) {
+        // Background moves very slowly
+        layerBg.style.transform = `translateY(${scrollY * 0.1}px)`;
+    }
+
+    if (layerFg) {
+        // Foreground moves slightly faster
+        layerFg.style.transform = `translateY(${scrollY * 0.25}px)`;
+    }
+});
+
 // Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
