@@ -101,7 +101,7 @@ body {
 @keyframes scaleIn {
     from {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.5);
     }
 
     to {
@@ -600,7 +600,7 @@ footer {
 }
 
 .modal-header h3 {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     color: var(--primary-color);
 }
 
@@ -613,6 +613,7 @@ footer {
 .modal-body {
     color: var(--text-secondary);
     line-height: 1.8;
+    font-size: 1.3rem;
 }
 
 /* Responsive */
