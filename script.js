@@ -114,7 +114,7 @@ const contentData = {
     },
     "extensions": {
         title: "Google 服務整合",
-        desc: "Gemini 的殺手級應用。它能直接讀取您的 Google 雲端硬碟、Gmail、Google Maps 資訊。您可以要求它「幫我總結關於專案 X 的所有郵件」或「規劃這週末的倫敦旅遊行程並標註在地圖上」。",
+        desc: "Gemini 的殺手級應用。不用切換分頁，只要說「幫我查詢關於某專案的 Gmail 信件」或「讀取雲端硬碟的 PDF」，它就能直接撈出資料並進行整理。亦可結合 Google Maps 規劃旅遊路線。",
         icon: "map",
         image: "assets/feat_extensions.png"
     },
