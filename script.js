@@ -18,7 +18,7 @@ function startQuiz() {
         },
         {
             q: "要在網頁中直接生成 App，應該使用哪個工具？",
-            options: ["A. Opal (Vibe Coding)", "B. Google Maps", "C. Deep Research"],
+            options: ["A. Opal", "B. Google Maps", "C. Deep Research"],
             answer: 0 // A
         },
         {
@@ -29,10 +29,10 @@ function startQuiz() {
     ];
 
     let score = 0;
-    
+
     for (let i = 0; i < questions.length; i++) {
         const userChoice = prompt(`${questions[i].q}\n${questions[i].options.join('\n')}\n(請輸入 A, B, 或 C)`);
-        
+
         if (!userChoice) return; // User cancelled
 
         let choiceIndex = -1;
