@@ -106,8 +106,8 @@ const contentData = {
         icon: "zap",
         image: "assets/feat_flash.png"
     },
-    "nano": {
-        title: "Gemini Nano",
+    "flash-lite": {
+        title: "Gemini Flash Lite",
         desc: "專為手機與終端裝置打造的輕量化模型。它能在裝置端離線運行，處理敏感數據或需要零延遲的任務，如即時語音轉文字、智慧回覆建議，確保隱私與效能。",
         icon: "smartphone",
         image: "assets/feat_nano.png"
