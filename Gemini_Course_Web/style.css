@@ -30,22 +30,30 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 120vh;
-    background-position: center;
-    background-repeat: repeat;
+    height: 100vh;
+    /* Fixed viewport height */
     z-index: -10;
     pointer-events: none;
-    will-change: transform;
+    will-change: background-position;
+    /* Optimized for bg animation */
 }
 
 .layer-bg {
-    background-size: 500px;
+    background-image: url('assets/bg_stars.png');
+    background-repeat: repeat;
+    background-size: 1300px;
+    /* Zoomed in */
+    background-position: center top;
     opacity: 0.6;
     z-index: -10;
 }
 
 .layer-fg {
-    background-size: cover;
+    background-image: url('assets/bg_particles.png');
+    background-repeat: repeat-y;
+    /* Repeat vertically for infinite scroll */
+    background-size: 110% auto;
+    /* Zoomed out slightly or fit */
     background-position: center top;
     opacity: 0.4;
     z-index: -9;
@@ -147,6 +155,7 @@ body {
     text-align: center;
     overflow: hidden;
     background-color: var(--bg-color);
+    /* Hide parallax layers */
     z-index: 1;
 }
 
