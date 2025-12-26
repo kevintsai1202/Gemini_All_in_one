@@ -162,6 +162,23 @@ const modalDesc = document.getElementById('modal-desc');
 const modalIcon = document.getElementById('modal-icon');
 const modalImg = document.getElementById('modal-img');
 
+// --- 圖片預載入功能 ---
+const preloadedImages = {};
+
+function preloadImages() {
+    Object.keys(contentData).forEach(key => {
+        const data = contentData[key];
+        if (data.image) {
+            const img = new Image();
+            img.src = data.image;
+            preloadedImages[key] = img;
+        }
+    });
+}
+
+// 頁面載入時預先載入所有圖片
+document.addEventListener('DOMContentLoaded', preloadImages);
+
 function openModal(key) {
     const data = contentData[key];
     if (!data) return;
@@ -169,9 +186,19 @@ function openModal(key) {
     modalTitle.textContent = data.title;
     modalDesc.textContent = data.desc;
 
-    // Set Image
+    // Set Image (使用預載入的圖片)
     if (data.image) {
-        modalImg.src = data.image;
+        // 使用預載入的圖片或直接設定 src
+        if (preloadedImages[key] && preloadedImages[key].complete) {
+            modalImg.src = preloadedImages[key].src;
+            modalImg.style.opacity = '1';
+        } else {
+            modalImg.style.opacity = '0';
+            modalImg.src = data.image;
+            modalImg.onload = () => {
+                modalImg.style.opacity = '1';
+            };
+        }
         modalImg.style.display = 'block';
     } else {
         modalImg.style.display = 'none';
